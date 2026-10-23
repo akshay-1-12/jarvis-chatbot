@@ -1,0 +1,357 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#020b18">
+    <title>Jarvis AI | Student Support System</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="app-shell">
+
+    <!-- LEFT NAVIGATION -->
+    <aside class="sidebar">
+        <div class="brand-core">
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+            <div class="core-letter">
+                <span class="robot-face" aria-label="Jarvis robot">
+                    <span class="robot-antenna"></span>
+                    <span class="robot-eye"></span>
+                    <span class="robot-eye"></span>
+                    <span class="robot-mouth"></span>
+                </span>
+            </div>
+        </div>
+
+        <div class="side-brand">JARVIS AI</div>
+        <div class="side-subtitle">STUDENT SUPPORT AI</div>
+        <div class="side-tagline">Always here for you</div>
+
+        <nav class="navigation">
+            <button class="nav-item active" data-view="home">
+                <span>⌂</span> Home
+            </button>
+            <button class="nav-item" data-view="chat">
+                <span>◉</span> Chat
+            </button>
+            <button class="nav-item" data-prompt="Help me build a realistic study timetable for my exams.">
+                <span>▤</span> Study Tools
+            </button>
+            <button class="nav-item" data-prompt="Help me explore career options, skills and internships.">
+                <span>▱</span> Career Guidance
+            </button>
+            <button class="nav-item" data-prompt="Explain how I can find scholarships and verify my eligibility through official sources.">
+                <span>◇</span> Scholarships
+            </button>
+            <button class="nav-item" data-prompt="I'm feeling stressed about my studies. Please listen and help me take one small step.">
+                <span>♡</span> Wellness
+            </button>
+        </nav>
+
+        <div class="sidebar-quote">
+            <div class="quote-mark">“</div>
+            You are capable of amazing things.
+            <br>I'm here to help.
+            <p>— Jarvis</p>
+            <div class="audio-line"><span></span><span></span><span></span><span></span><i></i></div>
+        </div>
+
+        <div class="sidebar-footer">
+            <span class="tiny-dot"></span> SYSTEM READY
+        </div>
+    </aside>
+
+    <!-- MAIN CHAT -->
+    <main class="main-panel">
+        <header class="topbar">
+            <div class="top-brand">
+                <span class="wordmark">JARVIS</span>
+                <span class="top-divider"></span>
+                <span class="top-description">STUDENT SUPPORT AI</span>
+            </div>
+
+            <div class="top-right">
+                <button id="settingsButton" class="settings-button" type="button"
+                        aria-haspopup="dialog" aria-controls="voiceSettings">
+                    ⚙ Settings
+                </button>
+                <span class="online-dot"></span>
+                <span id="connectionStatus">Online</span>
+                <span class="top-version">AI CORE / 01</span>
+            </div>
+        </header>
+
+        <div class="mobile-label">JARVIS AI · STUDENT COMPANION</div>
+        <section class="mobile-explain-panel" aria-label="Explain in your language">
+            <label for="mobileExplainLanguage">Explain in</label>
+            <select class="explain-language" id="mobileExplainLanguage">
+                <option value="mr">Marathi</option>
+                <option value="hi">Hindi</option>
+                <option value="en">English</option>
+            </select>
+            <button class="explain-button" type="button" data-explain>
+                Explain
+            </button>
+        </section>
+
+        <section class="workspace" id="workspace">
+
+            <div class="welcome-panel" id="welcome">
+                <div class="welcome-core">
+                    <div class="core-ring ring-a"></div>
+                    <div class="core-ring ring-b"></div>
+                    <div class="core-ring ring-c"></div>
+                    <div class="core-center">
+                        <span class="robot-face" aria-label="Jarvis robot">
+                            <span class="robot-antenna"></span>
+                            <span class="robot-eye"></span>
+                            <span class="robot-eye"></span>
+                            <span class="robot-mouth"></span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="welcome-copy">
+                    <div class="eyebrow"><span></span> PERSONAL AI COMPANION</div>
+                    <h1>Hello, I'm <span>Jarvis.</span></h1>
+                    <p>Your learning companion is ready. Ask me about your studies,
+                       exams, career, or anything you need support with.</p>
+                </div>
+                <div class="welcome-status">
+                    <span class="pulse-dot"></span>
+                    READY TO ASSIST
+                </div>
+            </div>
+
+            <section class="quick-panel" id="quickPanel">
+                <div class="section-heading">
+                    <span class="heading-symbol">✧</span>
+                    <span>QUICK ACCESS</span>
+                    <span class="heading-line"></span>
+                    <span class="heading-caption">SELECT A TOPIC</span>
+                </div>
+
+                <div class="quick-grid">
+                    <button class="quick-card" data-prompt="Help me create a practical study plan for my upcoming exams.">
+                        <span class="quick-icon">▤</span>
+                        <span><b>Study Planner</b><small>Build a study routine</small></span>
+                        <span class="card-arrow">↗</span>
+                    </button>
+
+                    <button class="quick-card" data-prompt="Explain a difficult topic to me in simple words, step by step.">
+                        <span class="quick-icon">ϟ</span>
+                        <span><b>Explain a Topic</b><small>Learn with examples</small></span>
+                        <span class="card-arrow">↗</span>
+                    </button>
+
+                    <button class="quick-card" data-prompt="I'm looking for internships. Help me choose skills and prepare a plan.">
+                        <span class="quick-icon">⌘</span>
+                        <span><b>Career Guidance</b><small>Plan your next move</small></span>
+                        <span class="card-arrow">↗</span>
+                    </button>
+
+                    <button class="quick-card" data-prompt="I'm stressed about college and exams. Can you help me feel less overwhelmed?">
+                        <span class="quick-icon">♡</span>
+                        <span><b>Talk to Jarvis</b><small>Support without judgment</small></span>
+                        <span class="card-arrow">↗</span>
+                    </button>
+
+                    <button class="quick-card" data-prompt="How can I search for student scholarships and check official eligibility criteria?">
+                        <span class="quick-icon">◇</span>
+                        <span><b>Scholarships</b><small>Explore opportunities</small></span>
+                        <span class="card-arrow">↗</span>
+                    </button>
+
+                    <button class="quick-card" data-prompt="Give me a simple daily routine to improve my time management and focus.">
+                        <span class="quick-icon">◷</span>
+                        <span><b>Time Management</b><small>Make time count</small></span>
+                        <span class="card-arrow">↗</span>
+                    </button>
+                </div>
+            </section>
+
+            <div class="conversation-heading">
+                <span class="section-heading-text">COMMUNICATION CHANNEL</span>
+                <span class="heading-line"></span>
+                <button id="clearChat" class="clear-button">↻ NEW CHAT</button>
+            </div>
+
+            <section class="messages" id="messages" aria-live="polite">
+                <!-- Messages are inserted safely by app.js -->
+            </section>
+
+            <div class="typing-row" id="typing" hidden>
+                <div class="mini-core">
+                    <span class="robot-face" aria-hidden="true">
+                        <span class="robot-antenna"></span>
+                        <span class="robot-eye"></span>
+                        <span class="robot-eye"></span>
+                        <span class="robot-mouth"></span>
+                    </span>
+                </div>
+                <div class="typing-card">
+                    <div class="typing-dots"><i></i><i></i><i></i></div>
+                    <span>JARVIS IS PROCESSING YOUR MESSAGE</span>
+                </div>
+            </div>
+
+        </section>
+
+        <footer class="composer-area">
+            <div id="attachmentList" class="attachment-list" aria-live="polite" hidden></div>
+            <div class="composer">
+                    <span class="composer-symbol">⌁</span>
+                <input id="fileInput" type="file" multiple hidden
+                       accept=".pdf,.png,.jpg,.jpeg,.webp,.gif,.mp3,.wav,.m4a,.aac,.ogg,.mp4,.mov,.webm,.txt,.md,.csv,.tsv,.json,.html,.htm,.xml,.py,.java,.js,.ts,.css,.sql,.yaml,.yml,.log,.c,.cpp,.h,.hpp,.sh,.bat,.docx,.pptx,.xlsx">
+                <button id="attachButton" class="composer-tool" type="button"
+                        aria-label="Attach files" title="Attach files">＋</button>
+                <textarea id="userInput" rows="1" maxlength="6000"
+                          placeholder="Message Jarvis... What is on your mind?"
+                          aria-label="Message Jarvis"></textarea>
+                <span class="input-shortcut">ENTER ↵</span>
+                <button id="micButton" class="composer-tool" type="button"
+                        aria-label="Speak your message" title="Speak your message">🎙</button>
+                <button id="sendBtn" type="submit" form="chatForm" aria-label="Send message">
+                    <span>➤</span>
+                </button>
+            </div>
+
+            <form id="chatForm" class="hidden-form"></form>
+
+            <div class="footer-info">
+                <span><i></i> SECURE LOCAL SESSION</span>
+                <span>POWERED BY GEMINI AI</span>
+                <span>VERIFY IMPORTANT INFORMATION</span>
+            </div>
+        </footer>
+    </main>
+
+    <!-- RIGHT INFORMATION PANEL -->
+    <aside class="right-panel">
+        <div class="profile-card hud-card">
+            <div class="profile-core">
+                <div class="profile-ring"></div>
+                <span class="robot-face" aria-hidden="true">
+                    <span class="robot-antenna"></span>
+                    <span class="robot-eye"></span>
+                    <span class="robot-eye"></span>
+                    <span class="robot-mouth"></span>
+                </span>
+            </div>
+            <div>
+                <h3>Jarvis AI</h3>
+                <p><span class="online-dot"></span> Student Companion</p>
+                <small>SUPPORT MODULE ACTIVE</small>
+            </div>
+        </div>
+
+        <section class="hud-card action-panel">
+            <div class="right-heading">QUICK ACTIONS</div>
+            <button data-prompt="Help me build a study planner for my upcoming exams.">
+                <span>▦</span> Study Planner <b>›</b>
+            </button>
+            <button data-prompt="Help me prepare for a software development internship interview.">
+                <span>▱</span> Career Guidance <b>›</b>
+            </button>
+            <button data-prompt="How do I find reliable scholarship information for students in Maharashtra?">
+                <span>◇</span> Scholarship Info <b>›</b>
+            </button>
+            <button data-prompt="I need encouragement and practical advice because college feels overwhelming.">
+                <span>♡</span> Wellness & Motivation <b>›</b>
+            </button>
+        </section>
+
+        <section class="hud-card explain-panel">
+            <div class="right-heading">EXPLAIN IN MY LANGUAGE</div>
+            <label class="explain-label" for="sideExplainLanguage">
+                Choose a language
+            </label>
+            <select class="explain-language" id="sideExplainLanguage">
+                <option value="mr">Marathi</option>
+                <option value="hi">Hindi</option>
+                <option value="en">English</option>
+            </select>
+            <button class="explain-button" type="button" data-explain>
+                <span>✧</span> Explain latest answer or file
+            </button>
+            <p class="explain-help">
+                Jarvis will explain the current topic or attached file in the
+                selected language.
+            </p>
+        </section>
+
+        <section class="hud-card focus-panel">
+            <div class="right-heading">TODAY'S FOCUS</div>
+            <div class="focus-content">
+                <div class="focus-icon">✧</div>
+                <div>
+                    <strong>Progress, not perfection.</strong>
+                    <p>One small step forward is still progress.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="learning-orb">
+            <div class="learning-ring ring-one"></div>
+            <div class="learning-ring ring-two"></div>
+            <div class="learning-inner">
+                <span>LEARN</span>
+                <span>GROW</span>
+                <span>SUCCEED</span>
+            </div>
+        </div>
+
+        <div class="right-footer">
+            JARVIS INTELLIGENCE SYSTEM<br>
+            <span>STUDENT EDITION · V1.0</span>
+        </div>
+    </aside>
+
+</div>
+
+<dialog id="voiceSettings" class="settings-dialog" aria-labelledby="settingsTitle">
+    <form method="dialog" class="settings-content">
+        <div class="settings-heading">
+            <div>
+                <span class="settings-eyebrow">PERSONALIZE JARVIS</span>
+                <h2 id="settingsTitle">Voice settings</h2>
+            </div>
+            <button class="settings-close" type="button"
+                    aria-label="Close settings without applying">×</button>
+        </div>
+
+        <label class="settings-field">
+            <span>Voice style</span>
+            <select id="voiceGender">
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+            </select>
+        </label>
+
+        <label class="settings-field">
+            <span>Device fallback voice</span>
+            <select id="voiceChoice">
+                <option value="">System default</option>
+            </select>
+        </label>
+
+        <p class="settings-note">
+            Read-aloud uses Gemini's natural speech voice and makes an additional
+            API request each time. If unavailable, it falls back to a voice
+            installed on your device; API quota may apply.
+        </p>
+
+        <div class="settings-actions">
+            <button class="settings-ok" type="submit" value="apply">OK</button>
+        </div>
+    </form>
+</dialog>
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
